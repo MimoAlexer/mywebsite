@@ -1,0 +1,626 @@
+/*
+    =============================
+    Portfolio-Stylesheet (style.css)
+    =============================
+    Diese Datei bestimmt das Aussehen deiner gesamten Website.
+    Die Kommentare erklären, was jede Regel macht und wie du sie anpassen kannst!
+    
+    TIPP: Du kannst mit Farben, Abständen und Schriftgrößen experimentieren.
+    Wenn du etwas änderst und speicherst, siehst du die Änderung sofort im Browser (evtl. Seite neu laden).
+*/
+
+/*
+    Der Hintergrund der Seite ist ein sanfter, moderner Farbverlauf (Gradient).
+    Die Schriftfarbe ist hell, damit sie gut lesbar ist.
+    'min-height: 100vh' sorgt dafür, dass die Seite immer mindestens die Höhe des Bildschirms hat.
+    'text-align: center' zentriert den Text auf der Seite.
+    Du kannst die Farben im 'background' ändern, z.B. zu anderen Farbcodes.
+*/
+body {
+    /*
+        Der Hintergrund ist ein Farbverlauf (Gradient) von Dunkelblau zu noch dunklerem Blau.
+        Du kannst die Farbcodes (#1a1a2e, #16213e) ändern, um andere Farben zu verwenden.
+        'min-height: 100vh' sorgt dafür, dass der Body immer mindestens die Höhe des Bildschirms einnimmt ("vh" = viewport height).
+        'color' bestimmt die Standard-Schriftfarbe auf der Seite (hier: sehr helles Grau).
+        'transition' sorgt für einen sanften Übergang, wenn du z.B. den Hintergrund änderst.
+        'text-align: center' zentriert alle Textelemente.
+    */
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 100vh;
+    color: #e6e6e6;
+    transition: background 0.5s ease;
+    text-align: center;
+}
+
+/*
+    Überschriften (h1, h2) bekommen einen Schatten, damit sie sich vom Hintergrund abheben.
+    'display: inline-block' sorgt dafür, dass der Effekt funktioniert.
+*/
+h1, h2 {
+    /*
+        Überschriften bekommen einen leichten Schatten, damit sie sich vom Hintergrund abheben.
+        'display: inline-block' sorgt dafür, dass der Effekt funktioniert und der nachfolgende Strich (bei h1) korrekt angezeigt wird.
+    */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    display: inline-block;
+}
+
+/*
+    Nach der Hauptüberschrift (h1) wird ein farbiger Strich angezeigt.
+    Du kannst die Breite, Höhe und Farbe anpassen.
+*/
+h1::after {
+    /*
+        Nach der Hauptüberschrift (h1) wird ein farbiger Strich angezeigt.
+        - 'width': Wie lang der Strich ist (in % der Überschriftenbreite).
+        - 'height': Wie dick der Strich ist.
+        - 'background': Farbe des Strichs (ändere #00b4d8 für andere Farben).
+        - 'margin': Abstand zum Text oben/unten.
+    */
+    content: '';
+    display: block;
+    width: 60%;
+    height: 3px;
+    background: #00b4d8;
+    margin: 10px auto;
+}
+
+/*
+    Buttons sehen modern aus: abgerundet, farbig, mit Schatten.
+    Du kannst z.B. die Hintergrundfarbe (#00b4d8) ändern.
+    'transition' sorgt für einen sanften Hover-Effekt.
+*/
+
+
+
+.button {
+    /*
+        Buttons sehen modern aus:
+        - 'padding': Innenabstand (oben/unten, rechts/links).
+        - 'background': Hintergrundfarbe (ändere #00b4d8 nach Geschmack).
+        - 'border-radius': Runde Ecken (je höher, desto runder).
+        - 'font-weight': Fettgedruckter Text.
+        - 'cursor: pointer': Zeigt beim Überfahren eine Hand an.
+        - 'box-shadow': Schatten für 3D-Effekt.
+        - 'transition': Sanfter Übergang bei Hover.
+        - 'margin': Abstand zu anderen Elementen.
+    */
+    padding: 12px 25px;
+    background: #00b4d8;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,180,216,0.3);
+    display: inline-block;
+    text-decoration: none;
+    margin: 20px 0;
+}
+
+/*
+    Wenn du mit der Maus über einen Button fährst, wird er dunkler und hebt sich hervor.
+*/
+.button:hover {
+    /*
+        Beim Überfahren wird der Button dunkler und hebt sich hervor:
+        - 'transform': Leichtes Anheben.
+        - 'box-shadow': Stärkerer Schatten.
+        - 'background': Dunklere Hintergrundfarbe.
+    */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,180,216,0.5);
+    background: #0096c7;
+}
+
+/*
+    Kopfzeile (header): Hier sind die Navigationslinks.
+    Die Links werden nebeneinander angezeigt und haben Abstand (gap).
+*/
+header {
+    /*
+        Kopfzeile (header): Hier stehen die Navigationslinks nebeneinander.
+        - 'display: flex' macht aus dem Header eine horizontale Leiste.
+        - 'justify-content: center' zentriert die Links.
+        - 'gap': Abstand zwischen den Links.
+        - 'padding': Abstand nach innen.
+    */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#terry {
+    max-width: 150px;
+}
+
+/*
+    Die Links in der Kopfzeile sehen wie kleine Buttons aus.
+    Sie werden abgerundet und bekommen beim Darüberfahren einen leichten Hintergrund.
+*/
+header a {
+    /*
+        Die Links im Header sehen wie kleine Buttons aus:
+        - 'color': Textfarbe (hier hellgrau).
+        - 'text-decoration: none': Kein Unterstrich.
+        - 'padding': Innenabstand.
+        - 'border-radius': Runde Ecken.
+        - 'transition': Sanfter Effekt beim Überfahren.
+    */
+    color: #e6e6e6;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+header a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/*
+    Fußzeile (footer): Steht ganz unten auf der Seite.
+    Hier kannst du z.B. dein Copyright eintragen.
+*/
+footer {
+    /*
+        Fußzeile (footer):
+        - 'padding': Innenabstand.
+        - 'margin-top': Abstand nach oben, damit der Footer nicht direkt am Inhalt klebt.
+        Tipp: Hier kannst du auch Hintergrundfarbe oder Textstil anpassen.
+    */
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/*
+    Projekte-Bereich: Die Projekte werden als Karten (cards) nebeneinander angezeigt.
+    'flex-wrap: wrap' sorgt dafür, dass die Karten bei kleinen Bildschirmen umgebrochen werden.
+    'gap' bestimmt den Abstand zwischen den Karten.
+    Du kannst die Werte anpassen, um mehr oder weniger Abstand zu haben.
+*/
+.projects-container {
+    /*
+        Projekte-Bereich:
+        - 'display: flex': Karten nebeneinander anordnen.
+        - 'flex-wrap: wrap': Bei kleinen Bildschirmen umbrechen.
+        - 'gap': Abstand zwischen Karten.
+        - 'margin': Abstand nach außen (oben/unten).
+        Tipp: Passe gap und margin an, um mehr/weniger Abstand zu bekommen.
+    */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 2rem auto;
+}
+
+.card {
+    /*
+        Einzelne Projektkarte:
+        - 'flex': Größe und Verhalten im Flex-Container.
+        - 'max-width', 'min-width', 'height': Größe der Karte.
+        - 'border-radius': Runde Ecken.
+        - 'background': Transparenter Hintergrund.
+        - 'backdrop-filter': Weicher Unschärfe-Effekt (modernes Design).
+        - 'box-shadow': Schatten für 3D-Look.
+        - 'transition': Sanfte Animation bei Hover.
+        Tipp: Passe die Größe, Farben und Schatten nach deinem Geschmack an!
+    */
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: 300px;
+    min-width: 250px;
+    height: 300px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    transition: transform 0.25s cubic-bezier(.25,.8,.25,1), box-shadow 0.25s, border 0.25s;
+}
+
+.card:hover, .card:focus-within {
+    /*
+        Beim Überfahren oder Fokussieren hebt sich die Karte hervor:
+        - 'transform': Leichtes Anheben, Vergrößern und Drehen.
+        - 'box-shadow': Stärkerer Schatten.
+    */
+    transform: translateY(-12px) scale(1.045) rotate(-1.5deg);
+    box-shadow: 0 12px 36px 0 rgba(0,180,216,0.25), 0 0 16px 2px #00b4d8;
+    border: 1.5px solid #00b4d8;
+    z-index: 2;
+}
+
+/*
+    Skills-Bereich: Die Skills werden als Karten (cards) nebeneinander angezeigt.
+    'flex-wrap: wrap' sorgt dafür, dass die Karten bei kleinen Bildschirmen umgebrochen werden.
+    'gap' bestimmt den Abstand zwischen den Karten.
+    Du kannst die Werte anpassen, um mehr oder weniger Abstand zu haben.
+*/
+/* Image container takes up about 2/3 of the card height */
+.image-container {
+    width: 100%;
+    height: 65%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Make images fill the container width completely */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This will crop the image as needed */
+    display: block;
+}
+
+/* Text container takes the remaining space */
+.text-container {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Skills layout */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 200px;
+    gap: 22px;
+    margin: 2rem auto;
+    overflow: visible;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Skills-Karten anpassen für den gleichen Effekt wie bei Projekten */
+.skill-card {
+    width: 150px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1.5px solid rgba(0,180,216,0.08);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    transition: box-shadow 0.25s, border 0.25s, background 0.3s;
+    z-index: 1;
+}
+
+.skill-card:hover, .skill-card:focus-within {
+    /* Kein scale/translate mehr! */
+    box-shadow: 0 10px 32px 0 rgba(0,180,216,0.32), 0 0 18px 4px #00b4d8;
+    border: 2px solid #00b4d8;
+    background: linear-gradient(120deg, rgba(0,180,216,0.13) 0%, rgba(255,255,255,0.18) 100%);
+    z-index: 99;
+}
+
+/* Shine und Wiggle entfernt für sauberen, modernen Look */
+
+
+
+/* Bildcontainer für Skills */
+.skill-card img {
+    width: 100%;
+    height: 70%; /* Bild nimmt 70% der Kartenhöhe ein */
+    object-fit: cover; /* Bild füllt Container und wird bei Bedarf beschnitten */
+    display: block;
+}
+
+/* Text-Container für Skills */
+.skill-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%; /* Text nimmt 30% der Kartenhöhe ein */
+    width: 100%;
+    font-weight: bold;
+    margin: 0;
+    padding: 8px;
+}
+/* Glassmorphism-Effekt für Cards */
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Group styling */
+.group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.group img {
+    width: 32px;
+    height: 32px;
+}
+
+.group li {
+    list-style: none;
+}
+
+li {
+    display: inline-block;
+}
+
+/* Main content area */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section spacing */
+section {
+    margin: 50px 0;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .card {
+        flex: 0 0 calc(50% - 20px);
+    }
+    
+    .skill-card {
+        flex: 0 0 calc(33.333% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .card, .skill-card {
+        flex: 0 0 calc(100% - 20px);
+    }
+    
+    header {
+        flex-direction: column;
+    }
+}
+
+/* CSS Variables für einfache Anpassungen */
+:root {
+    --primary-color: #00b4d8;
+    --secondary-color: #0096c7;
+    --text-color: #e6e6e6;
+    --background-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+/* Contact page styles */
+.contact-section {
+    margin: 40px 0;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.contact-info {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contact-info h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Email button styles */
+.email-button-container {
+    margin-top: 30px;
+}
+
+.email-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #00b4d8;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,180,216,0.3);
+    text-decoration: none;
+}
+
+.email-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,180,216,0.5);
+    background: #0096c7;
+}
+/* Message Board Styles */
+.message-board-section {
+    margin: 40px 0;
+}
+
+.message-board-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.drawing-area {
+    margin: 30px auto;
+    width: fit-content;
+}
+
+#drawing-canvas {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: crosshair;
+}
+
+.drawing-tools {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.drawing-tools button {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.drawing-tools button:hover {
+    background: var(--primary-color);
+}
+
+#submit-btn {
+    background: var(--primary-color);
+}
+
+#submit-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+#color-picker {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* Messages pile */
+.messages-pile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px auto;
+    max-width: 700px;
+    min-height: 250px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.message-note {
+    width: 200px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.message-note:hover {
+    transform: scale(1.05) rotate(0deg) !important;
+    z-index: 10;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.message-note img {
+    width: 100%;
+    display: block;
+}
+
+.note-timestamp {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 3px 6px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-top-left-radius: 4px;
+}
+
+/* Email button styles */
+.email-button-container {
+    margin-top: 30px;
+}
+
+.email-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #00b4d8;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,180,216,0.3);
+    text-decoration: none;
+}
+
+.email-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,180,216,0.5);
+    background: #0096c7;
+}
+
+@media (max-width: 600px) {
+    .messages-pile {
+        padding: 10px;
+    }
+    
+    .message-note {
+        width: 150px;
+    }
+}

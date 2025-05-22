@@ -1,0 +1,169 @@
+<!--
+    =============================
+    Portfolio Startseite (index.html)
+    =============================
+    Willkommen! Dies ist die Startseite deiner Portfolio-Website.
+    Die Kommentare erklären dir Schritt für Schritt, was jeder Abschnitt macht und wie du ihn anpassen kannst.
+    Du kannst nichts kaputt machen – probiere alles aus und lerne dabei!
+-->
+<!DOCTYPE html>
+<!--
+    Der DOCTYPE sagt dem Browser, dass dies eine moderne HTML5-Seite ist.
+    Immer ganz oben stehen lassen!
+-->
+<html lang="de"> <!-- Das Wurzelelement: Alles auf der Seite steht innerhalb von <html>. Das Attribut lang="de" gibt die Sprache an. -->
+<head>
+    <!--
+        Kopf-Bereich (head):
+        Hier stehen wichtige Infos, die NICHT direkt auf der Seite angezeigt werden, aber für den Browser wichtig sind.
+        - <meta charset="UTF-8">: Zeichencodierung, damit Umlaute & Sonderzeichen richtig angezeigt werden.
+        - <meta name="viewport" ...>: Sorgt dafür, dass die Seite auf Handy & PC gut aussieht (responsive Design).
+        - <title>: Das ist der Titel, der im Browser-Tab steht. Du kannst ihn nach Belieben ändern!
+        - <link rel="stylesheet" ...>: Verknüpft deine CSS-Datei für das Aussehen der Seite.
+        - <script src="...">: Bindet eine JavaScript-Datei ein, damit die Seite interaktiv wird.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title> <!-- Hier kannst du den Namen deiner Seite ändern! -->
+    <link rel="stylesheet" href="style.css"> <!-- Verknüpft das Aussehen deiner Seite -->
+    <script src="script.js"></script> <!-- Macht die Seite interaktiv, wenn du JavaScript benutzt -->
+</head>
+<body>
+    <!--
+        Kopfbereich der Seite (header):
+        Hier steht meistens das Menü (Navigation), mit dem du zwischen den Seiten wechseln kannst.
+        - <header>: Der Kopfbereich der Seite. Oft für Logos, Menüs oder Überschriften genutzt.
+        - <a href="...">: Ein Link zu einer anderen Seite. "href" gibt das Ziel an.
+        Tipp: Füge weitere Links hinzu, wenn du mehr Seiten hast!
+        Der Link zur aktuellen Seite kann mit CSS hervorgehoben werden (z.B. class="active").
+    -->
+    <header>
+        <a href="index.html">Home</a> <!-- Link zur Startseite -->
+        <a href="about.html">About</a> <!-- Link zur Über-mich-Seite (muss existieren!) -->
+        <a href="contact.html">Contact</a> <!-- Link zur Kontakt-Seite (muss existieren!) -->
+    </header>
+    <main>
+        <!--
+            Hauptbereich der Seite (main):
+            Hier steht der eigentliche Inhalt deiner Seite. Alles Wichtige kommt in diesen Bereich.
+            - <h1>: Die Hauptüberschrift der Seite. Jede Seite sollte genau eine <h1> haben!
+            - <p>: Ein Absatz. Hier kannst du Texte, Begrüßungen, Beschreibungen usw. einfügen.
+        -->
+        <h1>Mein sehr fertiges Portfolio(Es wird nie fertig sein)</h1> <!-- Hauptüberschrift -->
+        <p>Hier kannst du meine projekte sehen die opensource sind, <br> nebenbei kannst du meine Fähigkeiten bewunden und dich fragen warum du das nicht kannst</p> <!-- Begrüßungstext -->
+        
+        <!--
+            Projekte-Bereich:
+            Hier kannst du deine Projekte vorstellen.
+            - <section>: Ein logischer Abschnitt für einen bestimmten Bereich (hier: Projekte).
+            - <div class="projects-container">: Container für alle Projekt-Karten.
+            - <div class="card">: Einzelne Projekt-Karte. Kopiere diesen Block für weitere Projekte!
+            - <img>: Bild zum Projekt. Passe den Pfad und das "alt"-Attribut an.
+            - <div class="text-container">: Hier steht der Name oder eine kurze Beschreibung.
+            Tipp: Du kannst beliebig viele Projekte hinzufügen oder entfernen.
+        -->
+        <section>
+            <h2>Meine geile Projekte opensource unter der MIT Lizenz</h2>
+            <div class="projects-container">
+                <!-- Projekt-Karten: Kopiere einen <div class="card">...</div> Block für mehr Projekte -->
+                <div class="card">
+                    <div class="image-container">
+                        <a href="https://github.com/MimoAlexer/PapermcCamelPlugin"><img src="assets/Kamel.jpg" alt="Mein total Cooles Kamel Plugin">
+                        </a>
+                    </div>
+                    <div class="text-container">
+                        <p>MEIN geiles kamelPlugin</p> <!-- Hier den Namen/Beschreibung deines Projekts eintragen -->
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="image-container">
+                        <a href="https://github.com/MimoAlexer/YourHeartIsMyHeartPaper">
+                            <img src="assets/minecraft horse.webp" alt="Projekt 2">
+                        </a>
+                    </div>
+                    <div class="text-container">
+                        <p>Mein "alle herzen sind gleich Plugin" <br> (es ist sehr based)</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="image-container">
+                        <a href="https://github.com/MimoAlexer/PaperCitySystem">
+                            <img src="assets/minecraftcity.jpg" alt="Projekt 3">
+                        </a>
+                    </div>
+                    <div class="text-container">
+                        <p>Mein neues CityPlugin hab ich erst am 21.05 gemacht(based und WIP)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--
+            Skills-Bereich:
+            Zeige hier, was du kannst.
+            - <section>: Ein logischer Abschnitt für einen bestimmten Bereich (hier: Skills).
+            - <div class="skills-container">: Container für alle Skill-Karten.
+            - <div class="skill-card">: Einzelne Skill-Karte. Kopiere diesen Block für weitere Skills!
+            - <img>: Bild zum Skill. Passe den Pfad und das "alt"-Attribut an.
+            - <span class="skill-name">: Name der Fähigkeit.
+            Tipp: Passe Bilder und Texte an deine eigenen Fähigkeiten an!
+        -->
+        <section>
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <!-- Skill-Karten: Kopiere einen <div class="skill-card">...</div> Block für mehr Skills -->
+                <div class="skill-card">
+                    <img src="assets/html.jpg" alt="HTML">
+                    <span class="skill-name">HTML</span>
+                </div>                
+                
+                <div class="skill-card">
+                    <img src="assets/css.jpg" alt="CSS">
+                    <span class="skill-name">CSS</span>
+                </div>
+                
+                <div class="skill-card">
+                    <img src="assets/javascript.jpg" alt="JavaScript">
+                    <span class="skill-name">JavaScript</span>
+                </div>
+                
+                <div class="skill-card">
+                    <img src="assets/rust.jpg" alt="Rust">
+                    <span class="skill-name">Rust</span>
+                </div>
+                
+                <div class="skill-card">
+                    <img src="assets/c++.jpeg" alt="C++">
+                    <span class="skill-name">C++</span>
+                </div>
+                
+                <div class="skill-card">
+                    <img src="assets/gopher.jpg" alt="Golang">
+                    <span class="skill-name">Golang</span>
+                </div>
+                
+                <div class="skill-card">
+                    <img src="assets/vim.avif" alt="Vim Motions">
+                    <span class="skill-name">Vim Motions</span>
+                </div>
+
+                <div class="skill-card">
+                    <img src="assets/cs.jpg" alt="Vim Motions">
+                    <span class="skill-name">CS Zocken</span>
+                </div>
+            </div>
+        </section>
+    </main>
+        <!--
+        Fußbereich der Seite (footer):
+        Hier stehen oft rechtliche Hinweise, Copyright, Kontaktinfos oder Links.
+        - <footer>: Der untere Bereich deiner Seite. Wird auf allen Seiten oft gleich gestaltet.
+        Tipp: Passe den Text nach deinen Wünschen an!
+    -->
+    <footer>
+        &copy; 2025 Mein total geiles ENTWICKLER Portfolio
+    </footer>
+</body>
+</html>

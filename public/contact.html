@@ -1,0 +1,319 @@
+<!--
+    =============================
+    Kontaktseite (contact.html)
+    =============================
+    Willkommen! Diese Datei ist die Kontaktseite deiner Portfolio-Website.
+    Hier lernst du, wie man eine Kontaktseite mit HTML, CSS und JavaScript erstellt.
+    Die Kommentare erklären dir Schritt für Schritt, was jeder Abschnitt macht und wie du ihn anpassen kannst.
+    Du kannst nichts kaputt machen – probiere alles aus und lerne dabei!
+-->
+<!DOCTYPE html>
+<!--
+    Der DOCTYPE sagt dem Browser, dass dies eine moderne HTML5-Seite ist.
+    Immer ganz oben stehen lassen!
+-->
+<html lang="de"> <!-- Das Wurzelelement: Alles auf der Seite steht innerhalb von <html>. Das Attribut lang="de" gibt die Sprache an. -->
+<head>
+    <!--
+        Kopf-Bereich (head):
+        Hier stehen wichtige Infos, die NICHT direkt auf der Seite angezeigt werden, aber für den Browser wichtig sind.
+        - <meta charset="UTF-8">: Zeichencodierung, damit Umlaute & Sonderzeichen richtig angezeigt werden.
+        - <meta name="viewport" ...>: Sorgt dafür, dass die Seite auf Handy & PC gut aussieht (responsive Design).
+        - <title>: Das ist der Titel, der im Browser-Tab steht. Du kannst ihn nach Belieben ändern!
+        - <link rel="stylesheet" ...>: Verknüpft deine CSS-Datei für das Aussehen der Seite.
+        - <script src="...">: Bindet eine JavaScript-Datei ein, damit die Seite interaktiv wird.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Portfolio</title> <!-- Ändere den Seitentitel nach Wunsch -->
+    <link rel="stylesheet" href="style.css"> <!-- Verknüpft das Aussehen deiner Seite -->
+    <script src="script.js"></script> <!-- Macht die Seite interaktiv -->
+</head>
+<body>
+    <!--
+        Kopfbereich der Seite (header):
+        Hier steht meistens das Menü (Navigation), mit dem du zwischen den Seiten wechseln kannst.
+        - <header>: Der Kopfbereich der Seite. Oft für Logos, Menüs oder Überschriften genutzt.
+        - <a href="...">: Ein Link zu einer anderen Seite. "href" gibt das Ziel an.
+        Tipp: Füge weitere Links hinzu, wenn du mehr Seiten hast!
+        Der Link zur aktuellen Seite kann mit CSS hervorgehoben werden (z.B. class="active").
+    -->
+    <header>
+        <a href="index.html">Home</a> <!-- Link zur Startseite -->
+        <a href="about.html">About</a> <!-- Link zur Über-mich-Seite -->
+        <a href="contact.html">Contact</a> <!-- Link zur Kontaktseite (diese Seite) -->
+    </header>
+    <main>
+        <!--
+            Hauptbereich der Seite (main):
+            Hier steht der eigentliche Inhalt deiner Seite. Alles Wichtige kommt in diesen Bereich.
+            - <h1>: Die Hauptüberschrift der Seite. Jede Seite sollte genau eine <h1> haben!
+            - <p>: Ein Absatz. Hier kannst du Texte, Begrüßungen, Beschreibungen usw. einfügen.
+        -->
+        <h1>Kontakt</h1> <!-- Überschrift -->
+        <p>Ich freue mich nicht auf Ihre Nachricht!</p> <!-- Begrüßungstext -->
+        
+        <!--
+            Nachrichtenbrett-Bereich:
+            Hier können Besucher dir eine Nachricht als "Zettel" hinterlassen.
+            - <section>: Ein logischer Abschnitt für einen bestimmten Bereich (hier: Nachrichtenbrett).
+            - class="message-board-section": CSS-Klasse für das Styling (siehe style.css).
+            - <canvas>: Eine Zeichenfläche, auf der Besucher malen können (z.B. Grüße oder kleine Zeichnungen hinterlassen).
+            - <button>: Interaktive Schaltflächen (z.B. zum Löschen oder Absenden der Zeichnung).
+            - <input type="color">: Farbauswahl für das Zeichnen.
+            - <div class="messages-pile">: Hier erscheinen alle abgesendeten Nachrichten als kleine Zettel.
+            Tipp: Passe das Layout, die Farben und die Texte nach deinen Wünschen an!
+        -->
+        <section class="message-board-section">
+            <div class="message-board-container">
+                <h2>Leave me a message</h2> <!-- Bereichsüberschrift -->
+                
+                <!-- Zeichenbereich: Hier kann man zeichnen -->
+                <div class="drawing-area">
+                    <canvas id="drawing-canvas" width="200" height="200"></canvas> <!-- Zeichenfläche -->
+                    <div class="drawing-tools">
+                        <button id="clear-btn">Clear</button> <!-- Zum Löschen der Zeichnung -->
+                        <button id="submit-btn">Submit</button> <!-- Zum Absenden -->
+                        <input type="color" id="color-picker" value="#000000"> <!-- Farbauswahl -->
+                        <img id="terry" src="/public/assets/terry.jpg" alt="terry nicht da ):">
+                        <h2>B is for Based <br> B based <br> B terry</h2>
+                    </div>
+                </div>
+                
+                <h3>Messages from others</h3> <!-- Überschrift für Nachrichten anderer -->
+                <div class="messages-pile" id="messages-pile">
+                    <!-- Hier werden die Zettel angezeigt -->
+                </div>
+                
+                <!-- Button zum Versenden einer klassischen E-Mail -->
+                <div class="email-button-container">
+                    <a href="mailto:example@xd.ch" class="email-button">Write me an email</a> <!-- Öffnet dein E-Mail-Programm mit einer neuen Nachricht an die angegebene Adresse. -->
+                </div>
+            </div>
+        </section>
+    </main>
+        <!--
+        Fußbereich der Seite (footer):
+        Hier stehen oft rechtliche Hinweise, Copyright, Kontaktinfos oder Links.
+        - <footer>: Der untere Bereich deiner Seite. Wird auf allen Seiten oft gleich gestaltet.
+        Tipp: Passe den Text nach deinen Wünschen an!
+    -->
+    <footer>
+        &copy; 2025 Mein Portfolio
+    </footer>
+
+    <!--
+        JavaScript-Bereich (optional):
+        Mit <script> kannst du deiner Seite Interaktivität verleihen.
+        Hier wird z.B. das Zeichnen und Absenden von Nachrichten ermöglicht.
+        Tipp: Sieh dir die Kommentare im JavaScript an, um zu verstehen, wie alles funktioniert!
+    -->
+    <script>
+    // =============================
+    // Interaktives Nachrichtenbrett – Schritt für Schritt erklärt!
+    // =============================
+    // Dieser Code macht das Nachrichtenbrett und das Zeichnen im Canvas möglich.
+    // Alles ist ausführlich kommentiert, damit du jeden Schritt verstehst.
+
+    // Wenn die Seite komplett geladen ist, wird dieser Code ausgeführt
+    document.addEventListener('DOMContentLoaded', function() {
+        // === Canvas-Setup ===
+        // Das Canvas-Element ist die Zeichenfläche, auf der du malen kannst
+        const canvas = document.getElementById('drawing-canvas'); // Holt das Canvas-Element aus dem HTML
+        const ctx = canvas.getContext('2d'); // Der "context" ist das Werkzeug zum Zeichnen
+
+        // Das Canvas zu Beginn mit weißem Hintergrund füllen
+        ctx.fillStyle = '#ffffff'; // Farbe auf Weiß setzen
+        ctx.fillRect(0, 0, canvas.width, canvas.height); // Ganzes Canvas weiß ausmalen
+
+        // === Zeichen-Variablen ===
+        let isDrawing = false; // Merkt sich, ob gerade gezeichnet wird
+        let lastX = 0; // Die X-Position des letzten Punkts
+        let lastY = 0; // Die Y-Position des letzten Punkts
+        let currentColor = '#000000'; // Die aktuelle Zeichenfarbe (Standard: Schwarz)
+
+        // === Farbauswahl ===
+        // Wenn der Benutzer eine neue Farbe auswählt, wird sie gespeichert
+        document.getElementById('color-picker').addEventListener('input', (e) => {
+            currentColor = e.target.value; // Neue Farbe übernehmen
+        });
+
+        // === Canvas löschen ===
+        // Wenn der Benutzer auf "Clear" klickt, wird das Canvas wieder weiß
+        document.getElementById('clear-btn').addEventListener('click', () => {
+            ctx.fillStyle = '#ffffff'; // Weiß wählen
+            ctx.fillRect(0, 0, canvas.width, canvas.height); // Alles weiß übermalen
+        });
+
+        // === Zeichnung absenden ===
+        // Wenn der Benutzer auf "Submit" klickt, wird die Zeichnung als Bild gespeichert
+        document.getElementById('submit-btn').addEventListener('click', () => {
+            // Das Canvas als Bild (DataURL) speichern
+            const imageData = canvas.toDataURL('image/png');
+
+            // Die Funktion zum Erstellen eines neuen "Zettels" aufrufen
+            createMessageNote(imageData);
+
+            // Canvas nach dem Absenden wieder leeren
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        });
+
+        // === Zeichenfunktionen mit Maus ===
+        // Startet das Zeichnen, wenn die Maus gedrückt wird
+        function startDrawing(e) {
+            isDrawing = true; // Zeichnen beginnt
+            [lastX, lastY] = [e.offsetX, e.offsetY]; // Startpunkt merken
+        }
+
+        // Zeichnet eine Linie, wenn die Maus bewegt wird
+        function draw(e) {
+            if (!isDrawing) return; // Nur zeichnen, wenn gedrückt wird
+
+            ctx.beginPath(); // Neue Linie beginnen
+            ctx.moveTo(lastX, lastY); // Von letztem Punkt starten
+            ctx.lineTo(e.offsetX, e.offsetY); // Zur aktuellen Position zeichnen
+            ctx.lineWidth = 3; // Liniendicke
+            ctx.lineCap = 'round'; // Runde Linienenden
+            ctx.strokeStyle = currentColor; // Aktuelle Farbe verwenden
+            ctx.stroke(); // Linie zeichnen
+            [lastX, lastY] = [e.offsetX, e.offsetY]; // Aktuelle Position merken
+        }
+
+        // Zeichnen beenden, wenn die Maus losgelassen wird
+        function stopDrawing() {
+            isDrawing = false;
+        }
+
+        // === Maus-Events mit dem Canvas verbinden ===
+        canvas.addEventListener('mousedown', startDrawing); // Beim Drücken starten
+        canvas.addEventListener('mousemove', draw); // Beim Bewegen zeichnen
+        canvas.addEventListener('mouseup', stopDrawing); // Beim Loslassen stoppen
+        canvas.addEventListener('mouseout', stopDrawing); // Wenn Maus das Canvas verlässt, stoppen
+
+        // === Touch-Events für Handys/Tablets ===
+        // Hilfsfunktion: Gibt die Position des Fingers auf dem Canvas zurück
+        function getTouchPos(canvasDom, touchEvent) {
+            const rect = canvasDom.getBoundingClientRect(); // Position & Größe des Canvas auf dem Bildschirm
+            return {
+                x: touchEvent.touches[0].clientX - rect.left, // X-Position relativ zum Canvas
+                y: touchEvent.touches[0].clientY - rect.top // Y-Position relativ zum Canvas
+            };
+        }
+
+        // Zeichnen starten, wenn Finger aufsetzt
+        function touchStart(e) {
+            e.preventDefault(); // Standardverhalten (z.B. Scrollen) verhindern
+            const touchPos = getTouchPos(canvas, e);
+            startDrawing({offsetX: touchPos.x, offsetY: touchPos.y});
+        }
+
+        // Zeichnen, wenn Finger bewegt wird
+        function touchMove(e) {
+            e.preventDefault();
+            const touchPos = getTouchPos(canvas, e);
+            draw({offsetX: touchPos.x, offsetY: touchPos.y});
+        }
+
+        // Touch-Events mit dem Canvas verbinden
+        canvas.addEventListener('touchstart', touchStart);
+        canvas.addEventListener('touchmove', touchMove);
+        canvas.addEventListener('touchend', stopDrawing);
+
+        // === Funktion: Neuen Zettel (Nachricht) erstellen ===
+        function createMessageNote(imageData) {
+            const messagesPile = document.getElementById('messages-pile'); // Das Element, in dem die Zettel gesammelt werden
+
+            // Neues div-Element für den Zettel erstellen
+            const note = document.createElement('div');
+            note.className = 'message-note'; // CSS-Klasse für das Aussehen
+            note.style.transform = `rotate(${Math.random() * 40 - 20}deg)`; // Zufällige Drehung für "echten Zettel-Look"
+
+            // Bild (die Zeichnung) zum Zettel hinzufügen
+            const img = document.createElement('img');
+            img.src = imageData; // Das Bild aus dem Canvas
+            img.alt = 'User message';
+            note.appendChild(img);
+
+            // Zeitstempel (Datum & Uhrzeit) hinzufügen
+            const timestamp = document.createElement('div');
+            timestamp.className = 'note-timestamp';
+            const now = new Date();
+            timestamp.textContent = `${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+            note.appendChild(timestamp);
+
+            // Zettel ganz oben zur Pinnwand hinzufügen
+            messagesPile.insertBefore(note, messagesPile.firstChild);
+
+            // Wenn dies der erste Zettel ist, Beispielnachrichten laden
+            if (messagesPile.children.length === 1) {
+                loadSampleMessages();
+            }
+        }
+
+        // === Funktion: Beispielnachrichten hinzufügen ===
+        function loadSampleMessages() {
+            // In einem echten Projekt würde man hier Nachrichten von einem Server laden
+            // Für dieses Beispiel fügen wir einige vorgefertigte Zettel hinzu
+
+            // Beispiel-Daten: Farbe und Drehung für jeden Zettel
+            const sampleMessages = [
+                { rotate: 15, color: '#FF5733' },
+                { rotate: -10, color: '#33FF57' },
+                { rotate: 5, color: '#3357FF' },
+                { rotate: -20, color: '#F3FF33' },
+                { rotate: 8, color: '#FF33F3' }
+            ];
+
+            const messagesPile = document.getElementById('messages-pile');
+
+            sampleMessages.forEach(sample => {
+                // Neues Canvas für jede Beispielzeichnung
+                const sampleCanvas = document.createElement('canvas');
+                sampleCanvas.width = 200;
+                sampleCanvas.height = 200;
+                const sampleCtx = sampleCanvas.getContext('2d');
+
+                // Hintergrund weiß füllen
+                sampleCtx.fillStyle = '#ffffff';
+                sampleCtx.fillRect(0, 0, 200, 200);
+
+                // Einfache Zeichnung (Kreuz und Linie)
+                sampleCtx.beginPath();
+                sampleCtx.strokeStyle = sample.color;
+                sampleCtx.lineWidth = 3;
+                sampleCtx.moveTo(50, 50);
+                sampleCtx.lineTo(150, 150);
+                sampleCtx.moveTo(150, 50);
+                sampleCtx.lineTo(50, 150);
+                sampleCtx.moveTo(100, 50);
+                sampleCtx.lineTo(100, 150);
+                sampleCtx.stroke();
+
+                // Neuen Beispielzettel erstellen
+                const note = document.createElement('div');
+                note.className = 'message-note';
+                note.style.transform = `rotate(${sample.rotate}deg)`;
+
+                // Bild zum Zettel hinzufügen
+                const img = document.createElement('img');
+                img.src = sampleCanvas.toDataURL('image/png');
+                img.alt = 'Sample message';
+                note.appendChild(img);
+
+                // Zufälliges Datum der letzten 2 Wochen als Zeitstempel
+                const timestamp = document.createElement('div');
+                timestamp.className = 'note-timestamp';
+                const randomDate = new Date();
+                randomDate.setDate(randomDate.getDate() - Math.floor(Math.random() * 14));
+                timestamp.textContent = `${randomDate.toLocaleDateString()} ${randomDate.toLocaleTimeString()}`;
+                note.appendChild(timestamp);
+
+                // Beispielzettel zur Pinnwand hinzufügen
+                messagesPile.appendChild(note);
+            });
+        }
+    });
+    </script>
+</body>
+</html>

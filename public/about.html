@@ -1,0 +1,87 @@
+<!--
+    =============================
+    Über-uns-Seite (about.html)
+    =============================
+    Willkommen! Diese Datei ist die "Über mich/uns"-Seite deiner Portfolio-Website.
+    Hier erfährst du, wie eine typische HTML-Seite aufgebaut ist.
+    Die Kommentare erklären dir Schritt für Schritt, was jeder Abschnitt macht und wie du ihn anpassen kannst.
+    Du kannst nichts kaputt machen – probiere alles aus und lerne dabei!
+-->
+<!DOCTYPE html>
+<!--
+    Der DOCTYPE sagt dem Browser, dass dies eine moderne HTML5-Seite ist.
+    Immer ganz oben stehen lassen!
+-->
+<html lang="de"> <!-- Das Wurzelelement: Alles auf der Seite steht innerhalb von <html>. Das Attribut lang="de" gibt die Sprache an. -->
+<head>
+    <!--
+        Kopf-Bereich (head):
+        Hier stehen wichtige Infos, die NICHT direkt auf der Seite angezeigt werden, aber für den Browser wichtig sind.
+        - <meta charset="UTF-8">: Zeichencodierung, damit Umlaute & Sonderzeichen richtig angezeigt werden.
+        - <meta name="viewport" ...>: Sorgt dafür, dass die Seite auf Handy & PC gut aussieht (responsive Design).
+        - <title>: Das ist der Titel, der im Browser-Tab steht. Du kannst ihn nach Belieben ändern!
+        - <link rel="stylesheet" ...>: Verknüpft deine CSS-Datei für das Aussehen der Seite.
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über mich</title> <!-- Ändere den Seitentitel nach Wunsch -->
+    <link rel="stylesheet" href="style.css"> <!-- Verknüpft das Aussehen deiner Seite -->
+</head>
+<body>
+    <!--
+        Kopfbereich der Seite (header):
+        Hier steht meistens das Menü (Navigation), mit dem du zwischen den Seiten wechseln kannst.
+        - <header>: Der Kopfbereich der Seite. Oft für Logos, Menüs oder Überschriften genutzt.
+        - <a href="...">: Ein Link zu einer anderen Seite. "href" gibt das Ziel an.
+        - class="active": Markiert den Link, auf dessen Seite du dich gerade befindest (für Hervorhebung in CSS).
+        Tipp: Füge weitere Links hinzu, wenn du mehr Seiten hast!
+    -->
+    <header>
+        <a href="index.html">Home</a> <!-- Link zur Startseite -->
+        <a href="about.html" class="active">About</a> <!-- Link zur Über-uns-Seite (diese Seite) -->
+        <a href="contact.html">Contact</a> <!-- Link zur Kontaktseite -->
+    </header>
+    <main>
+        <!--
+            Hauptbereich der Seite (main):
+            Hier steht der eigentliche Inhalt deiner Seite. Alles Wichtige kommt in diesen Bereich.
+            - <h1>: Die Hauptüberschrift der Seite. Jede Seite sollte genau eine <h1> haben!
+            - <p>: Ein Absatz. Hier kannst du Texte, Begrüßungen, Beschreibungen usw. einfügen.
+        -->
+        <h1>Über</h1> <!-- Überschrift -->
+        <p>Jooooo, Willkommen auf meiner Wespenseite(das ist richtig geschrieben) <br> schau dich ruhig um, ist ja alles eh opensource, versteht sich</p>
+        <!--
+            Bereich für Team-Infos und Werte.
+            - <section>: Ein logischer Abschnitt auf der Seite, z.B. für ein bestimmtes Thema oder Thema-Gruppe.
+            - class="about-content-section": CSS-Klasse für das Styling (siehe style.css).
+            - <div>: Ein Container für beliebige Inhalte. Hier für Team und Werte.
+            - <ul>: Ungeordnete Liste (bullet points) für Aufzählungen.
+            - <li>: Ein Listeneintrag, z.B. für Teammitglieder.
+            Tipp: Passe Namen, Rollen und Werte nach deinen Vorstellungen an oder füge weitere Abschnitte hinzu!
+        -->
+        <section class="about-content-section">
+            <div class="about-card">
+                <h2>Mein geist</h2>
+                <ul>
+                    <li>Anna Litschka – Gründerin & Entwicklerin</li> <!-- Beispielname, ändere nach Bedarf -->
+                    <li>Max Mustermann – Designer</li>
+                    <li>Lisa Beispiel – Projektmanagerin</li>
+                </ul>
+            </div>
+            <div class="about-card">
+                <h2>Meine Werte</h2>
+                <p>Ja...</p>
+            </div>
+        </section>
+    </main>
+        <!--
+        Fußbereich der Seite (footer):
+        Hier stehen oft rechtliche Hinweise, Copyright, Kontaktinfos oder Links.
+        - <footer>: Der untere Bereich deiner Seite. Wird auf allen Seiten oft gleich gestaltet.
+        Tipp: Passe den Text nach deinen Wünschen an!
+    -->
+    <footer>
+        &copy; Total geiles Portfolio
+    </footer>
+</body>
+</html>
